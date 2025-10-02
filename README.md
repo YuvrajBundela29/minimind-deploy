@@ -29,6 +29,10 @@ An innovative educational platform that explains complex concepts in multiple le
 - **Smooth Animations**: Professional micro-interactions and transitions
 - **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
 
+## 👥 Meet Our Team
+
+Learn about the talented individuals who built MiniMind: [Team Overview](TEAM.md)
+
 ## 🚀 Live Demo
 
 Experience MiniMind in action: **[Launch MiniMind](https://yuvibundela.github.io/Minimind2.1/)**
@@ -59,6 +63,7 @@ Experience MiniMind in action: **[Launch MiniMind](https://yuvibundela.github.io
 - [Changelog](CHANGELOG.md) - Version history and release notes
 - [Code of Conduct](CODE_OF_CONDUCT.md) - Community guidelines
 - [Security Policy](SECURITY.md) - Security practices and reporting
+- [Team Overview](TEAM.md) - Meet the minds behind MiniMind
 
 ## 🧪 Development Setup
 

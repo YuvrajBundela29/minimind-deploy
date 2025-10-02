@@ -18,6 +18,8 @@
 
 MiniMind is an innovative AI-powered educational platform designed to explain complex concepts through multiple learning styles. With support for 25+ languages and four distinct learning modes, MiniMind adapts to your preferred way of learning, making education accessible and engaging for everyone.
 
+Developed by a talented team of professionals, MiniMind combines expertise in AI, UI/UX design, and education to create an exceptional learning experience. [Learn more about our team](TEAM.md).
+
 ## System Requirements
 
 ### Minimum Requirements

@@ -208,3 +208,7 @@ If you need help with your contribution:
 ## License
 
 By contributing to MiniMind, you agree that your contributions will be licensed under the MIT License.
+
+## Meet the Team
+
+MiniMind was originally created by a dedicated team of professionals. [Learn more about our team](TEAM.md).
