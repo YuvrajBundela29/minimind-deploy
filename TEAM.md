@@ -4,6 +4,23 @@ Meet the talented individuals who brought MiniMind to life. Our diverse team com
 
 ## Core Team Members
 
+### Ushma Talreja - Quality Assurance Specialist
+**Role**: Quality Assurance Specialist  
+**Icon**: 🛡️  
+**Contributions**:
+- Ensured MiniMind runs like a well-oiled machine
+- Rigorously tested every feature and hunted down bugs
+- Proactively recommended enhancements for a flawless user experience
+- Maintained high quality standards throughout development
+
+### Ishita Bajpai - Product Development Associate
+**Role**: Product Development Associate  
+**Icon**: 🔧  
+**Contributions**:
+- Brought flexibility and curiosity to product development
+- Contributed across various stages of development
+- Applied a multidisciplinary approach to drive innovation
+- Explored new possibilities and niches within the team
 ### Yuvraj Singh Bundela - Backend Developer
 **Role**: Backend Developer  
 **Icon**: 🧠  
@@ -40,25 +57,6 @@ Meet the talented individuals who brought MiniMind to life. Our diverse team com
 - Refined conversational tone and flow for a human-like experience
 - Ensured every interaction feels natural, human, and helpful
 - Designed the personality and response styles for different learning modes
-
-### Ushma Talreja - Quality Assurance Specialist
-**Role**: Quality Assurance Specialist  
-**Icon**: 🛡️  
-**Contributions**:
-- Ensured MiniMind runs like a well-oiled machine
-- Rigorously tested every feature and hunted down bugs
-- Proactively recommended enhancements for a flawless user experience
-- Maintained high quality standards throughout development
-
-### Ishita Bajpai - Product Development Associate
-**Role**: Product Development Associate  
-**Icon**: 🔧  
-**Contributions**:
-- Brought flexibility and curiosity to product development
-- Contributed across various stages of development
-- Applied a multidisciplinary approach to drive innovation
-- Explored new possibilities and niches within the team
-
 ## Special Recognition
 
 Our team members have worked tirelessly to create an innovative educational platform that explains complex concepts through multiple learning styles. Each member has contributed their unique expertise to make MiniMind a reality:
