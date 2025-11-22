@@ -39,32 +39,35 @@ class NetlifyAIService {
 
   // Get an explanation for a question in a specific mode and language
   async getExplanation(question, mode, language = 'en') {
-    return this._makeRequest({
+    const data = await this._makeRequest({
       question,
       mode,
       language,
       action: 'explain'
     });
+    return data.content;
   }
 
   // Refine a question to make it better for learning
   async refinePrompt(question, language = 'en') {
-    return this._makeRequest({
+    const data = await this._makeRequest({
       question,
       mode: 'thinker', // Default mode for refinement
       language,
       action: 'refine'
     });
+    return data.content;
   }
 
   // Get a concise answer (one word or bullet points)
   async getOneWordAnswer(question, language = 'en') {
-    return this._makeRequest({
+    const data = await this._makeRequest({
       question,
       mode: 'thinker', // Default mode for one-word answers
       language,
       action: 'one-word'
     });
+    return data.content;
   }
 
   // Continue a conversation with context
@@ -80,12 +83,13 @@ class NetlifyAIService {
       throw new Error('No user message found in conversation history');
     }
 
-    return this._makeRequest({
+    const data = await this._makeRequest({
       question: lastUserMessage.content,
       mode,
       language,
       action: 'explain' // Use explain action for conversation continuation
     });
+    return data.content;
   }
 
   // Translation function - this is now handled on the client side
