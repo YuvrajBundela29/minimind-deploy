@@ -1,5 +1,5 @@
 // Netlify Function to handle AI API calls securely
-const { OpenAIClient } = require('openai');
+import { OpenAIClient } from 'openai';
 
 // Environment variables
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
@@ -35,7 +35,7 @@ const client = new OpenAIClient({
 });
 
 // Main handler function
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
