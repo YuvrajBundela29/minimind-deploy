@@ -444,9 +444,11 @@ function App() {
 
   // Function to format AI answers with bold text instead of stars and hashtags
   const formatAnswer = (answer) => {
-    if (!answer) return '';
-    
-    let formatted = answer;
+    if (answer == null) return '';
+
+    // Ensure we always work with a string to avoid runtime errors when
+    // the AI returns structured content or unexpected types.
+    let formatted = typeof answer === 'string' ? answer : String(answer);
     
     // Remove hashtags and format as section headers
     formatted = formatted.replace(/###\s*(.*?)\n/g, '<h3 class="section-header">$1</h3>');
@@ -795,9 +797,10 @@ function App() {
 
   // Function to clean text for speech (remove hashtags, markdown, emojis)
   const cleanTextForSpeech = (text) => {
-    if (!text) return '';
-    
-    let cleanText = text;
+    if (text == null) return '';
+
+    // Always operate on a string to avoid .replace on non-string values
+    let cleanText = typeof text === 'string' ? text : String(text);
     
     // Remove HTML tags
     cleanText = cleanText.replace(/<[^>]*>/g, ' ');
@@ -1299,7 +1302,7 @@ Shared from MiniMind AI`;
       const response = await AIService.makeRequest(messages, 0.7);
       
       // Parse the response to extract topics
-      const topics = response
+      const topics = String(response || '')
         .split('\n')
         .filter(line => /^\d+\.\s*/.test(line))
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
