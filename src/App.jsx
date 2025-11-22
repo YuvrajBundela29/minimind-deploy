@@ -2777,6 +2777,13 @@ Shared from MiniMind AI`;
                   
                   <div className="team-grid">
                     <div className="team-member">
+                      <div className="member-icon">🧠</div>
+                      <h3>Yuvraj Singh Bundela</h3>
+                      <h4>Backend Developer</h4>
+                      <p>Yuvraj is the powerhouse behind our backend systems. From building robust APIs to implementing secure and scalable server logic, he ensures MINIMIND performs seamlessly under the hood, so users get speed, stability, and security.</p>
+                    </div>
+                    
+                    <div className="team-member">
                       <div className="member-icon">🛡️</div>
                       <h3>Ushma Talreja</h3>
                       <h4>Quality Assurance Specialist</h4>
@@ -2795,13 +2802,6 @@ Shared from MiniMind AI`;
                       <h3>Ishita Bajpai</h3>
                       <h4>Product Development Associate</h4>
                       <p>Ishita brings flexibility and curiosity to the table, contributing across various stages of product development. Her multidisciplinary approach helps drive innovation as she explores her niche within the team.</p>
-                    </div>
-                    
-                    <div className="team-member">
-                      <div className="member-icon">🧠</div>
-                      <h3>Yuvraj Singh Bundela</h3>
-                      <h4>Backend Developer</h4>
-                      <p>Yuvraj is the powerhouse behind our backend systems. From building robust APIs to implementing secure and scalable server logic, he ensures MINIMIND performs seamlessly under the hood, so users get speed, stability, and security.</p>
                     </div>
                   </div>
                 </div>
