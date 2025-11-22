@@ -1046,25 +1046,31 @@ Shared from MiniMind AI`;
 
   // Ultra-realistic voice synthesis with advanced voice selection and controls
   const handleSpeak = (text, mode = 'beginner') => {
-    if (!('speechSynthesis' in window)) {
-      addNotification('❌ Speech synthesis not supported in your browser', 'error');
-      return;
-    }
+    try {
+      if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+        addNotification('❌ Speech synthesis not supported in your browser', 'error');
+        return;
+      }
 
-    // Stop any current speech
-    if (isSpeaking) {
-      stopSpeech();
-      return;
-    }
+      // Normalize text to string in case any non-string slips through
+      const rawText = text == null ? '' : (typeof text === 'string' ? text : String(text));
 
-    // Clean text for natural speech
-    const cleanText = cleanTextForSpeech(text);
-    if (!cleanText.trim()) {
-      addNotification('No text to speak', 'error');
-      return;
-    }
+      // Stop any current speech (toggle behavior)
+      if (isSpeaking) {
+        stopSpeech();
+        return;
+      }
 
-    const utterance = new SpeechSynthesisUtterance(cleanText);
+      // Clean text for natural speech
+      const cleanText = cleanTextForSpeech(rawText);
+      if (!cleanText.trim()) {
+        addNotification('No text to speak', 'error');
+        return;
+      }
+
+      console.log('🎤 handleSpeak called with text length:', cleanText.length, 'mode:', mode);
+
+      const utterance = new SpeechSynthesisUtterance(cleanText);
     setCurrentSpeech(utterance);
     setIsSpeaking(true);
     setSpeechPaused(false);
@@ -1229,6 +1235,10 @@ Shared from MiniMind AI`;
     } else {
       speakWithVoice();
     }
+  } catch (err) {
+    console.error('🚫 Unexpected speech error:', err);
+    addNotification('Speech could not be started. Please try again.', 'error');
+  }
   };
 
   // Enhanced fullscreen mode switching with answer loading
