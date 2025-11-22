@@ -182,7 +182,7 @@ exports.handler = async (event, context) => {
       throw new Error('Failed to parse AI provider response');
     }
 
-    const content =
+    let content =
       completion &&
       completion.choices &&
       completion.choices[0] &&
@@ -192,6 +192,20 @@ exports.handler = async (event, context) => {
     if (!content) {
       console.error(`[${requestId}] No content field in OpenRouter response`, { completion });
       throw new Error('No content in AI response');
+    }
+
+    // OpenRouter / OpenAI can sometimes return structured content (arrays of parts).
+    // Normalize to a simple string so the frontend can safely call .replace, etc.
+    if (Array.isArray(content)) {
+      content = content
+        .map((part) => {
+          if (typeof part === 'string') return part;
+          if (part && typeof part.text === 'string') return part.text;
+          return JSON.stringify(part);
+        })
+        .join(' ');
+    } else if (typeof content !== 'string') {
+      content = String(content);
     }
 
     const responsePayload = {
