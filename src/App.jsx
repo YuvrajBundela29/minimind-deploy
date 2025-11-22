@@ -2798,20 +2798,6 @@ Shared from MiniMind AI`;
                     </div>
                     
                     <div className="team-member">
-                      <div className="member-icon">🖌️</div>
-                      <h3>Aditya Bundela</h3>
-                      <h4>UI/UX Design Lead</h4>
-                      <p>Aditya elevates the user experience by merging functionality with aesthetics. He leads the design direction with a focus on clean interfaces, user behavior psychology, and responsive layouts — ensuring MINIMIND feels futuristic, smooth, and human-centered.</p>
-                    </div>
-                    
-                    <div className="team-member">
-                      <div className="member-icon">🪄</div>
-                      <h3>Ranu Yadav</h3>
-                      <h4>AI Prompt & Experience Designer</h4>
-                      <p>Ranu ensures that every interaction with MINIMIND feels natural, human, and helpful. From crafting intelligent prompts to refining conversational tone and flow, she helps the AI feel less like a machine — and more like a mentor.</p>
-                    </div>
-                    
-                    <div className="team-member">
                       <div className="member-icon">🧠</div>
                       <h3>Yuvraj Singh Bundela</h3>
                       <h4>Backend Developer</h4>
