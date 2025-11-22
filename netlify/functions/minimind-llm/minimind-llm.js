@@ -21,11 +21,81 @@ const modePrompts = {
   mastery: `You are an academic expert providing comprehensive, research-level explanations. Start with an abstract overview, then break down into theory, models, and formulas. Reference real-world applications in major companies and research. Use technical terminology appropriately. For mathematical formulas, use proper notation within [brackets] like [TCP_Throughput = (MSS/RTT) × sqrt(3/2) / sqrt(p)]. End with thought-provoking Socratic questions. Be thorough and rigorous.`
 };
 
-// Language instructions (simplified for backend)
+// Language instructions including full language and casual/roman support
+// (adapted from the original frontend aiService languageInstructions)
 const languageInstructions = {
-  en: 'Respond in English.',
-  hi: 'Respond in Hindi.'
-  // Add other languages as needed
+  en: '',
+  hi: 'Please respond in Hindi language.',
+  ur: 'Please respond in Urdu language.',
+  ta: 'Please respond in Tamil language.',
+  ml: 'Please respond in Malayalam language.',
+  bn: 'Please respond in Bengali language.',
+  pa: 'Please respond in Punjabi language.',
+  gu: 'Please respond in Gujarati language.',
+  kn: 'Please respond in Kannada language.',
+  te: 'Please respond in Telugu language.',
+  or: 'Please respond in Odia language.',
+  as: 'Please respond in Assamese language.',
+  ne: 'Please respond in Nepali language.',
+  mr: 'Please respond in Marathi language.',
+  sa: 'Please respond in Sanskrit language.',
+  sd: 'Please respond in Sindhi language.',
+  ks: 'Please respond in Kashmiri language.',
+  doi: 'Please respond in Dogri language.',
+  mni: 'Please respond in Manipuri language.',
+  sat: 'Please respond in Santali language.',
+  mai: 'Please respond in Maithili language.',
+  kok: 'Please respond in Konkani language.',
+  bho: 'Please respond in Bhojpuri language.',
+  bod: 'Please respond in Bodo language.',
+  hinglish: 'Please respond in Hinglish (mix of Hindi and English, commonly used in India).',
+  // International languages
+  es: 'Please respond in Spanish language.',
+  fr: 'Please respond in French language.',
+  de: 'Please respond in German language.',
+  zh: 'Please respond in Chinese language.',
+  ja: 'Please respond in Japanese language.',
+  ko: 'Please respond in Korean language.',
+  pt: 'Please respond in Portuguese language.',
+  ru: 'Please respond in Russian language.',
+  ar: 'Please respond in Arabic language.',
+  it: 'Please respond in Italian language.',
+  nl: 'Please respond in Dutch language.',
+  tr: 'Please respond in Turkish language.',
+  pl: 'Please respond in Polish language.',
+  vi: 'Please respond in Vietnamese language.',
+  th: 'Please respond in Thai language.',
+  id: 'Please respond in Indonesian language.',
+  ms: 'Please respond in Malay language.',
+  // Rajasthani language
+  raj: 'Please respond in Rajasthani language.',
+
+  // Casual mode language codes (Roman script)
+  hi_casual: 'Please respond in Hindi language but write using English alphabets/Roman script. For example: "Main accha hoon" instead of "मैं अच्छा हूं". This is for users who understand Hindi but prefer Roman script.',
+  ur_casual: 'Please respond in Urdu language but write using English alphabets/Roman script. For example: "Main theek hoon" instead of "میں ٹھیک ہوں". This is for users who understand Urdu but prefer Roman script.',
+  ta_casual: 'Please respond in Tamil language but write using English alphabets/Roman script. For example: "Naan nalla irukken" instead of "நான் நல்லா இருக்கேன்". This is for users who understand Tamil but prefer Roman script.',
+  ml_casual: 'Please respond in Malayalam language but write using English alphabets/Roman script. For example: "Njan nannaayi irikkunnu" instead of "ഞാന്‍ നന്നായി ഇരിക്കുന്നു". This is for users who understand Malayalam but prefer Roman script.',
+  bn_casual: 'Please respond in Bengali language but write using English alphabets/Roman script. For example: "Ami bhalo achi" instead of "আমি ভালো আছি". This is for users who understand Bengali but prefer Roman script.',
+  pa_casual: 'Please respond in Punjabi language but write using English alphabets/Roman script. For example: "Main theek haan" instead of "ਮੈਂ ਠੀਕ ਹਾਂ". This is for users who understand Punjabi but prefer Roman script.',
+  gu_casual: 'Please respond in Gujarati language but write using English alphabets/Roman script. For example: "Hun saaru chhu" instead of "હું સારુ છું". This is for users who understand Gujarati but prefer Roman script.',
+  kn_casual: 'Please respond in Kannada language but write using English alphabets/Roman script. For example: "Naanu chennagidde" instead of "ನಾನು ಚೆನ್ನಾಗಿದ್ದೇ". This is for users who understand Kannada but prefer Roman script.',
+  te_casual: 'Please respond in Telugu language but write using English alphabets/Roman script. For example: "Nenu baagunnaanu" instead of "నేను బాగున్నాను". This is for users who understand Telugu but prefer Roman script.',
+  or_casual: 'Please respond in Odia language but write using English alphabets/Roman script. For example: "Mu bhala achi" instead of "ମୁ ଭଲ ଅଛି". This is for users who understand Odia but prefer Roman script.',
+  as_casual: 'Please respond in Assamese language but write using English alphabets/Roman script. For example: "Moi bhal aasu" instead of "মোই ভাল আসোঁ". This is for users who understand Assamese but prefer Roman script.',
+  ne_casual: 'Please respond in Nepali language but write using English alphabets/Roman script. For example: "Ma thik chhu" instead of "म ठिक छु". This is for users who understand Nepali but prefer Roman script.',
+  mr_casual: 'Please respond in Marathi language but write using English alphabets/Roman script. For example: "Mi thik aahe" instead of "मी ठीक आहे". This is for users who understand Marathi but prefer Roman script.',
+  sa_casual: 'Please respond in Sanskrit language but write using English alphabets/Roman script. For example: "Aham kushalah asmi" instead of "अहम् कुशलः अस्मि". This is for users who understand Sanskrit but prefer Roman script.',
+  sd_casual: 'Please respond in Sindhi language but write using English alphabets/Roman script. This is for users who understand Sindhi but prefer Roman script.',
+  ks_casual: 'Please respond in Kashmiri language but write using English alphabets/Roman script. This is for users who understand Kashmiri but prefer Roman script.',
+  doi_casual: 'Please respond in Dogri language but write using English alphabets/Roman script. This is for users who understand Dogri but prefer Roman script.',
+  mni_casual: 'Please respond in Manipuri language but write using English alphabets/Roman script. This is for users who understand Manipuri but prefer Roman script.',
+  sat_casual: 'Please respond in Santali language but write using English alphabets/Roman script. This is for users who understand Santali but prefer Roman script.',
+  mai_casual: 'Please respond in Maithili language but write using English alphabets/Roman script. This is for users who understand Maithili but prefer Roman script.',
+  kok_casual: 'Please respond in Konkani language but write using English alphabets/Roman script. This is for users who understand Konkani but prefer Roman script.',
+  bho_casual: 'Please respond in Bhojpuri language but write using English alphabets/Roman script. This is for users who understand Bhojpuri but prefer Roman script.',
+  bod_casual: 'Please respond in Bodo language but write using English alphabets/Roman script. This is for users who understand Bodo but prefer Roman script.',
+  // Rajasthani casual mode
+  raj_casual: 'Please respond in Rajasthani language but write using English alphabets/Roman script. This is for users who understand Rajasthani but prefer Roman script.',
 };
 
 // Helper: build messages for different actions

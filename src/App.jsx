@@ -1291,25 +1291,15 @@ Shared from MiniMind AI`;
     addNotification('Search result loaded successfully!', 'success');
   };
 
-  // Generate related topics function
+  // Generate related topics function (using the unified Netlify-backed AI response)
   const generateRelatedTopics = async (currentQuestion) => {
     if (!currentQuestion.trim()) return [];
     
     try {
       const prompt = `Based on the question "${currentQuestion}", provide 5 related topics or questions that would help deepen understanding of this subject. Format each as a concise question or topic. Number them 1-5.`;
-      
-      const messages = [
-        {
-          role: 'system',
-          content: 'You are an educational assistant that suggests related learning topics. Provide exactly 5 related topics or questions, numbered 1-5, based on the input question.'
-        },
-        {
-          role: 'user',
-          content: prompt
-        }
-      ];
-      
-      const response = await AIService.makeRequest(messages, 0.7);
+
+      // Use the same AI pipeline (getAIResponse) so language & casual mode are respected
+      const response = await getAIResponse(prompt, 'thinker');
       
       // Parse the response to extract topics
       const topics = String(response || '')
@@ -2791,20 +2781,19 @@ Shared from MiniMind AI`;
                     </div>
                     
                     <div className="team-member">
-                      <div className="member-icon">🎨</div>
-                      <h3>Priyansh Gautam</h3>
-                      <h4>UI Designer</h4>
-                      <p>Priyansh is the creative force shaping MINIMIND's visual identity. With a keen sense of design, he crafts intuitive, modern, and user-centric interfaces that make learning not just effective — but enjoyable.</p>
-                    </div>
-                    
-                    <div className="team-member">
                       <div className="member-icon">🔧</div>
                       <h3>Ishita Bajpai</h3>
                       <h4>Product Development Associate</h4>
                       <p>Ishita brings flexibility and curiosity to the table, contributing across various stages of product development. Her multidisciplinary approach helps drive innovation as she explores her niche within the team.</p>
                     </div>
-                  </div>
+                  </div><div className="team-member">
+                      <div className="member-icon">🎨</div>
+                      <h3>Priyansh Gautam</h3>
+                      <h4>UI Designer</h4>
+                      <p>Priyansh is the creative force shaping MINIMIND's visual identity. With a keen sense of design, he crafts intuitive, modern, and user-centric interfaces that make learning not just effective — but enjoyable.</p>
+                    </div>
                 </div>
+                
               )}
               {currentPage === 'faq' && (
                 <div className="faq-page">
