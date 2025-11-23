@@ -2786,13 +2786,13 @@ Shared from MiniMind AI`;
                       <h4>Product Development Associate</h4>
                       <p>Ishita brings flexibility and curiosity to the table, contributing across various stages of product development. Her multidisciplinary approach helps drive innovation as she explores her niche within the team.</p>
                     </div>
-                  </div><div className="team-member">
+                    <div className="team-member">
                       <div className="member-icon">🎨</div>
                       <h3>Priyansh Gautam</h3>
                       <h4>UI Designer</h4>
                       <p>Priyansh is the creative force shaping MINIMIND's visual identity. With a keen sense of design, he crafts intuitive, modern, and user-centric interfaces that make learning not just effective — but enjoyable.</p>
                     </div>
-                </div>
+                  </div>
                 
               )}
               {currentPage === 'faq' && (
